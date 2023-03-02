@@ -5,23 +5,26 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{asset('admin_css/assets/img/apple-icon.png2')}}">
     <link rel="icon" href="{{asset('admin_css/assets/img/favicon.png')}}">
     <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
     <title>
         BabaYaga
     </title>
-    <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="{{asset('admin_css/assets/css/material-dashboard.css?v=2.0.0')}}">
     <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
-    <!-- Documentation extras -->
-    <!-- CSS Just for demo purpose, don't include it in your project -->
+
     <link href="{{asset('admin_css/assets/assets-for-demo/demo.css')}}" rel="stylesheet"/>
-    <!-- iframe removal -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Luxury Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 </head>
 <body class="">
 <div class="wrapper">
@@ -147,14 +150,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/simpleCart.min.js"> </script>
+
+<script type="text/javascript" src="js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script src="js/jquery.easydropdown.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 
-        //init wizard
-
-        // demo.initMaterialWizard();
-
-        // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
 
         demo.initCharts();

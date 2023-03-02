@@ -14,10 +14,7 @@ use \App\Http\Controllers\admin\indexController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/',[\App\Http\Controllers\front\indexController::class,'index'])->name('front');
 Route::group(['namespace' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [indexController::class, 'index'])->name('index');
     Route::group(['namespace' => 'publisher', 'prefix' => 'publisher', 'as' => 'publisher.'], function () {
