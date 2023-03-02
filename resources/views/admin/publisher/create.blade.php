@@ -13,7 +13,7 @@
                             <p class="card-category">Create Publisher House</p>
                         </div>
                         <div class="card-body">
-                            <form action="{{route('admin.publisher.create.post')}}" method="post">
+                            <form action="{{route('admin.publisher.create.post')}}" method="post" class="table table-bordered table-hover dataTable">
                                 {{csrf_field()}}
                                 <div class="row">
                                     <div class="col-md-12">

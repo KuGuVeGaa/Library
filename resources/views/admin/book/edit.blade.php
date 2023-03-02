@@ -13,14 +13,16 @@
                             <p class="card-category">Edit Book</p>
                         </div>
                         <div class="card-body">
-                            <form enctype="multipart/form-data" action="{{route('admin.book.create.post')}}"
+                            <form enctype="multipart/form-data" class="table table-bordered table-hover dataTable"
+                                  action="{{route('admin.book.edit.post',['id'=>$data[0]]['id'])}}"
                                   method="post">
                                 {{csrf_field()}}
                                 <div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="bmd-label-floating" for="name ">Edit Book Name</label>
-                                            <input type="text" name="name" class="form-control" value="{{$data[0]['name']}}">
+                                            <input type="text" name="name" class="form-control"
+                                                   value="{{$data[0]['name']}}">
                                         </div>
 
                                     </div>
@@ -29,7 +31,18 @@
                                     <div class="form-group">
                                         <label class="bmd-label-floating" for="writerId">Edit Book Writer</label>
                                         <select type="text" name="writerId" class="form-control">
-                                            @foreach($writers as $value)
+                                            @foreach($writer as $value)
+                                                <option value="{{$value['id']}}">{{$value['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating" for="categoryId">Edit Category</label>
+                                        <select type="text" multiple class="chosen-select col-md-12" name="categoryId" class="form-control">
+                                            @foreach($category as $value)
                                                 <option value="{{$value['id']}}">{{$value['name']}}</option>
                                             @endforeach
                                         </select>
@@ -39,19 +52,20 @@
                                     <div class="form-group">
                                         <label class="bmd-label-floating" for="publisherId">Edit Publisher</label>
                                         <select type="text" name="publisherId" class="form-control">
-                                            @foreach($publishers as $value)
+                                            @foreach($publisher as $value)
                                                 <option value="{{$value['id']}}">{{$value['name']}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
+
                                 <div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="bmd-label-floating" for="description ">Edit
                                                 Description</label>
                                             <textarea class="form-control" name="description" cols="30"
-                                                      rows="10"></textarea>
+                                                      rows="10">{{$data[0]['Description']}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -60,6 +74,9 @@
                                     <div class="col-md-4">
                                         <div>
                                             <label class="bmd-label-floating" for="image ">Edit Image : </label>
+                                            <br>
+                                            <img src="http://library.local/{{$data[0]['image']}}" alt="image"
+                                                 style="width: 120px;height: 120px;">
                                             <input type="file" name="image">
                                         </div>
                                     </div>
@@ -69,7 +86,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="bmd-label-floating" for="price">Edit Price</label>
-                                            <input type="number" class="form-control" name="price">
+                                            <input type="number" class="form-control" name="price"
+                                                   value="{{$data[0]['Price']}}">
                                         </div>
                                     </div>
                                 </div>
@@ -82,6 +100,15 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(".chosen-select").chosen({
+            no_results_text: "Oops, nothing found!"
+        })
+
+    </script>
+
 @endsection
 
 

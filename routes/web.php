@@ -44,6 +44,14 @@ Route::group(['namespace' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
         Route::post('/edit/{id}', [\App\Http\Controllers\admin\book\indexController::class, 'update'])->name('edit.post');
         Route::get('/delete/{id}',[\App\Http\Controllers\admin\book\indexController::class,'delete'])->name('delete');
     });
+    Route::group(['namespace' => 'category', 'prefix' => 'category', 'as' => 'category.'], function () {
+        Route::get('/', [\App\Http\Controllers\admin\category\indexController::class, 'index'])->name('index');
+        Route::get('/add', [\App\Http\Controllers\admin\category\indexController::class, 'create'])->name('create');
+        Route::post('/add', [\App\Http\Controllers\admin\category\indexController::class, 'store'])->name('create.post');
+        Route::get('/edit/{id}', [\App\Http\Controllers\admin\category\indexController::class, 'edit'])->name('edit');
+        Route::post('/edit/{id}', [\App\Http\Controllers\admin\category\indexController::class, 'update'])->name('edit.post');
+        Route::get('/delete/{id}',[\App\Http\Controllers\admin\category\indexController::class,'delete'])->name('delete');
+    });
 
 });
 

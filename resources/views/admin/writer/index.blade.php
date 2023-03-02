@@ -9,12 +9,13 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
+                            <button class="btn btn-success pull-right" id="addWriter">Add</button>
                             <h4 class="card-title ">Writers Table</h4>
                             <p class="card-category"> Here is a Writers</p>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-bordered table-hover dataTable">
                                     <thead class=" text-primary">
                                     <th class="text-primary">
                                         Name
@@ -51,3 +52,14 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+    <script>
+        var writer = document.getElementById('addWriter');
+        writer.addEventListener('click', routing);
+
+        function routing() {
+            location.href = "{{route('admin.writer.create')}}";
+        }
+    </script>
+@endsection
+

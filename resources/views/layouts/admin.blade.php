@@ -8,6 +8,7 @@
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{asset('admin_css/assets/img/apple-icon.png2')}}">
     <link rel="icon" href="{{asset('admin_css/assets/img/favicon.png')}}">
+    <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
     <title>
         BabaYaga
     </title>
@@ -16,6 +17,7 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="{{asset('admin_css/assets/css/material-dashboard.css?v=2.0.0')}}">
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
     <!-- Documentation extras -->
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('admin_css/assets/assets-for-demo/demo.css')}}" rel="stylesheet"/>
@@ -127,6 +129,7 @@
 </div>
 
 <!--   Core JS Files   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 <script src="{{asset('admin_css/assets/js/core/jquery.min.js')}}"></script>
 <script src="{{asset('admin_css/assets/js/core/popper.min.js')}}"></script>
 <script src="{{asset('admin_css/assets/js/bootstrap-material-design.js')}}"></script>
@@ -141,6 +144,9 @@
 <script src="{{asset('admin_css/assets/js/material-dashboard.js?v=2.0.0')}}"></script>
 <!-- demo init -->
 <script src="{{asset('admin_css/assets/js/plugins/demo.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -154,5 +160,19 @@
         demo.initCharts();
     });
 </script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            content: 'Add Book'
+        },
+        methods: {
+            route : function (){
+                alert('Hello World');
+            }
+        }
+    });
+</script>
+@yield('scripts')
 </body>
 </html>

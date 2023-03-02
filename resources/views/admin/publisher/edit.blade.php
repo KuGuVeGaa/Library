@@ -13,7 +13,7 @@
                             <p class="card-category">{{$data[0]['name']}}</p>
                         </div>
                         <div class="card-body">
-                            <form action="{{route('admin.publisher.edit.post',['id'=>$data[0]['id']])}}" method="post">
+                            <form action="{{route('admin.publisher.edit.post',['id'=>$data[0]['id']])}}" method="post" class="table table-bordered table-hover dataTable">
                                 {{csrf_field()}}
                                 <div class="row">
                                     <div class="col-md-12">
