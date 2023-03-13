@@ -15,9 +15,7 @@ use \App\Http\Controllers\admin\indexController;
 */
 Route::get('/', [\App\Http\Controllers\front\indexController::class, 'index'])->name('front');
 Route::get('/book/detail/{selflink}', [App\Http\Controllers\front\book\indexController::class, 'index'])->name('book.detail');
-//Route::get('/register',[\App\Http\Controllers\auth\RegisterController::class,'index'])->name('register');
-//Route::post('/register',[\App\Http\Controllers\auth\RegisterController::class,'index'])->name('register.post');
-//Route::get('/login',[\App\Http\Controllers\auth\LoginController::class,'index'])->name('login');
+Route::get('/basket/add/{id}',[App\Http\Controllers\front\basket\indexController::class,'add'])->name('basket.add');
 
 
 Route::group(['namespace' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {

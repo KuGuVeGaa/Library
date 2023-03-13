@@ -8,6 +8,12 @@
             <li class="breadcrumb-item ">{{$data[0]->name}}</li>
         </ol>
     </div>
+    @if(session('status'))
+        <div class="success">
+            {{session("status")}}
+        </div>
+
+    @endif
     <div class="single contact">
         <div class="container">
             <div class="single-main">
@@ -57,7 +63,7 @@
                                     <li><span>Publisher House</span>
                                         <span class="span_3_of_2">: {{$data[0]->publisher->name}}</span></li>
                                 </ul>
-                                <a href="#" class="add-cart item_add">ADD TO CART</a>
+                                <a href="{{route('basket.add',['id'=>$data[0]['id']])}}" class="add-cart item_add">ADD TO BASKET</a>
 
                             </div>
                         </div>
