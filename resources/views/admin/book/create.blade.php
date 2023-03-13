@@ -39,7 +39,7 @@
                                     <div class="form-group">
                                         <label class="bmd-label-floating" for="categoryId">Category</label><br>
                                         <select data-placeholder="Add Category..." multiple
-                                                class="chosen-select col-md-12" name="categoryId" id="category">
+                                                class="chosen-select col-md-12" name="categoryId" id="categoryId">
                                             @foreach($category as $value)
                                                 <option value="{{$value->id}}">{{$value->name}}</option>}
                                             @endforeach

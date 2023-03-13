@@ -5,6 +5,13 @@
  */
 
 require('./bootstrap');
+require('jquery');
+require('vue');
+
+import $ from 'jquery'
+
+window.jQuery = $;
+window.$ = $;
 
 window.Vue = require('vue').default;
 

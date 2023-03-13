@@ -12,5 +12,13 @@ class xHelper{
         $string = str_replace(" ", "-", $string);
         return $string;
     }
+    static function largeImage($image){
+        $imageExplode = explode('/',$image);
+        $fileName = end($imageExplode);
+        $key = key($imageExplode);
+        unset($imageExplode[$key]);
+        $includeImage = implode('/',$imageExplode);
+        return $includeImage.'/large/'.$fileName;
+    }
 }
 

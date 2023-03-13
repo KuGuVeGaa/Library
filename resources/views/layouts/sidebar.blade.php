@@ -42,9 +42,9 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="../examples/maps.html">
+                <a class="nav-link" href="{{route('admin.slider.index')}}">
                     <i class="material-icons">location_ons</i>
-                    <p>Maps</p>
+                    <p>Slider</p>
                 </a>
             </li>
             <li class="nav-item ">

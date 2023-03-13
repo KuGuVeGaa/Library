@@ -21,7 +21,7 @@ class CreateBooksTable extends Migration
             $table->integer('publisherId');
             $table->string('image');
             $table->double('Price');
-            $table->integer('catagoryId');
+            $table->integer('categoryId');
             $table->text('Description')->nullable();
             $table->timestamps();
         });

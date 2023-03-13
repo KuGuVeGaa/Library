@@ -8,6 +8,7 @@
     <link rel="apple-touch-icon" href="{{asset('admin_css/assets/img/apple-icon.png2')}}">
     <link rel="icon" href="{{asset('admin_css/assets/img/favicon.png')}}">
     <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="{{mix('css/app.css')}}">
     <title>
         BabaYaga
     </title>
@@ -18,9 +19,9 @@
     <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
 
     <link href="{{asset('admin_css/assets/assets-for-demo/demo.css')}}" rel="stylesheet"/>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('css/memenu.css')}}" rel="stylesheet" type="text/css" media="all" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Luxury Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -133,6 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--   Core JS Files   -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<script src="{{mix('js/app.js')}}"></script>
 <script src="{{asset('admin_css/assets/js/core/jquery.min.js')}}"></script>
 <script src="{{asset('admin_css/assets/js/core/popper.min.js')}}"></script>
 <script src="{{asset('admin_css/assets/js/bootstrap-material-design.js')}}"></script>
@@ -151,12 +153,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/simpleCart.min.js"> </script>
+<script src="{{asset('js/simpleCart.min.js')}}"> </script>
 
-<script type="text/javascript" src="js/memenu.js"></script>
+<script type="text/javascript" src="{{asset('js/memenu.js')}}"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
-<script src="js/jquery.easydropdown.js"></script>
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="{{asset('js/jquery.easydropdown.js')}}"></script>
+<script src="{{asset('js/jquery-1.11.0.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 

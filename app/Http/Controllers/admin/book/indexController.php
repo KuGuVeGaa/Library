@@ -17,7 +17,7 @@ class indexController extends Controller
 {
     public function index()
     {
-        $data = Books::paginate(10);
+        $data = Books::with('writer')->paginate(10);
         return view('admin.book.index', ['data' => $data]);
     }
 
