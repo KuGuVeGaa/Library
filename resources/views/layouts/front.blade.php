@@ -11,6 +11,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="BabaYaga"/>
     <link rel="stylesheet" type="text/css" media="all" href="{{mix('css/app.css')}}">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
 
 </head>
 <div class="top-header">
@@ -18,12 +26,23 @@
         <div class="top-header-main">
             <div class="col-md-6 top-header-left">
                 <div class="drop">
+                    @auth
+                        <div class="box">
+                            <a href="#" style="color: white;font-size: 16px">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                        </div>
+                        <div class="box">
+                            <a style="font-size: 20px" onclick="event.preventDefault();document.getElementById('logout-form').submit()" href="{{route('logout')}}">Exit</a>
+                            <form method="POST" action="{{route('logout')}}" id="logout-form">
+                                {{csrf_field()}}
+                            </form>
+                        </div>
+                    @endauth
                     @guest
                     <div class="box">
-                        <a href="{{url('/login')}}">Login</a>
+                        <a style="font-size: 20px" href="{{url('/login')}}">Login</a>
                     </div>
                     <div class="box1">
-                        <a href="{{url('/register')}}">Register</a>
+                        <a style="font-size: 20px" href="{{url('/register')}}">Register</a>
                     </div>
                     @endguest
                     <div class="clearfix"></div>
@@ -31,9 +50,9 @@
             </div>
             <div class="col-md-6 top-header-left">
                 <div class="cart box_1">
-                    <a href="checkout.html">
+                    <a href="/basket">
                         <div class="total">
-                            <span class="simpleCart_total"></span></div>
+                            <span class="simpleCart_total">{{\App\Helper\basketHelper::totalPrice()}}</span></div>
                         <img src="{{asset('images/cart-1.png')}}" alt=""/>
                     </a>
                     <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>

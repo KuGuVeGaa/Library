@@ -1,16 +1,5 @@
 @extends('layouts.front')
 @section('content')
-    @auth
-        <div class="box">
-            <a href="#" style="color: white">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
-        </div>
-        <div class="box">
-            <a onclick="event.preventDefault();document.getElementById('logout-form').submit()" href="{{route('logout')}}">Exit</a>
-            <form method="POST" action="{{route('logout')}}" id="logout-form">
-                {{csrf_field()}}
-            </form>
-        </div>
-    @endauth
     <div class="bnr" id="home">
         <div id="top" class="callbacks_container">
             <ul class="rslides" id="slider4">

@@ -81,7 +81,10 @@ return [
     */
 
     'locale' => 'en',
-
+    'available_locales' => [
+        'tr',
+        'en'
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -162,6 +165,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -231,6 +235,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Datatables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 

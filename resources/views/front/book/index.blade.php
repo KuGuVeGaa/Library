@@ -1,5 +1,10 @@
 @extends('layouts.front')
 @section('content')
+    @if(session('status'))
+        <div class="success">
+            <h3 class="success">{{session("status")}}</h3>
+        </div>
+    @endif
     <div class="col-md-12"
          style="--bs-breadcrumb-divider: '>';font-size: 15px;left: 2cm"
          aria-label="breadcrumb">
@@ -8,12 +13,6 @@
             <li class="breadcrumb-item ">{{$data[0]->name}}</li>
         </ol>
     </div>
-    @if(session('status'))
-        <div class="success">
-            {{session("status")}}
-        </div>
-
-    @endif
     <div class="single contact">
         <div class="container">
             <div class="single-main">
@@ -22,11 +21,7 @@
                         <div class="col-md-5 single-top-left">
                             <div class="flexslider">
                                 <ul class="slides">
-                                    <li data-thumb="{{asset('/images/Assassin\'sCreedtheRenaissanceCodex.jpg')}}">
-                                        <div class="col-xs-12 thumb-image"><img src="{{asset('/images/Assassin\'sCreedtheRenaissanceCodex.jpg')}}"
-                                                                      data-imagezoom="true" class="img-responsive"
-                                                                      alt=""/></div>
-                                    </li>
+
                                     <li data-thumb="{{asset(\App\Helper\xHelper::largeImage($data[0]['image']))}}">
                                         <div class="col-xs-12 thumb-image"><img src="{{asset(\App\Helper\xHelper::largeImage($data[0]['image']))}}"
                                                                       data-imagezoom="true" class="img-responsive"

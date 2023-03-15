@@ -4,7 +4,7 @@
             <div class="col-md-9 header-left">
                 <div class="top-nav">
                     <ul class="memenu skyblue">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="/">Home</a></li>
                         <li class="grid"><a href="#">Men</a>
                             <div class="mepanel">
                                 <div class="row">
