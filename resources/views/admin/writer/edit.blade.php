@@ -9,11 +9,12 @@
                     @endif
                     <div class="card">
                         <div class="card-header card-header-primary">
+                            <button class="btn btn-success pull-right" id="addCategory">Add</button>
                             <h4 class="card-title">Writer Edit</h4>
                             <p class="card-category">{{$data[0]['name']}} Edit</p>
                         </div>
                         <div class="card-body">
-                            <form enctype="multipart/form-data"
+                            <form enctype="multipart/form-data" class="table table-bordered table-hover dataTable"
                                   action="{{route('admin.writer.edit.post',$data[0]['id'])}}"
                                   method="post">
                                 {{csrf_field()}}
@@ -54,4 +55,15 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+
+    <script>
+        var writer = document.getElementById('addWriter');
+        writer.addEventListener('click', routing);
+
+        function routing() {
+            location.href = "{{route('admin.writer.create')}}";
+        }
+    </script>
 @endsection

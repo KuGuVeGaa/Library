@@ -13,7 +13,7 @@
                             <p class="card-category">Create Book</p>
                         </div>
                         <div class="card-body">
-                            <form enctype="multipart/form-data" action="{{route('admin.book.create.post')}}"
+                            <form enctype="multipart/form-data" action="{{route('admin.book.create.post')}}" class="table table-bordered table-hover dataTable"
                                   method="post">
                                 {{csrf_field()}}
                                 <div>
@@ -31,6 +31,17 @@
                                         <select type="text" name="writerId" class="form-control">
                                             @foreach($writers as $value)
                                                 <option value="{{$value['id']}}">{{$value['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating" for="categoryId">Category</label><br>
+                                        <select data-placeholder="Add Category..." multiple
+                                                class="chosen-select col-md-12" name="categoryId" id="categoryId">
+                                            @foreach($category as $value)
+                                                <option value="{{$value->id}}">{{$value->name}}</option>}
                                             @endforeach
                                         </select>
                                     </div>
@@ -81,6 +92,13 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(".chosen-select").chosen({
+            no_results_text: "Oops, nothing found!"
+        })
+    </script>
 @endsection
 
 

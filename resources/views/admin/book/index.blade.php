@@ -5,16 +5,17 @@
             @if(session('status'))
                 <div class="alert alert-primary" role="alert">{{session('status')}} </div>
             @endif
-            <div class="row">
+            <div class="row" id="app">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
+                            <button class="btn btn-success pull-right" id="addBook">Add</button>
                             <h4 class="card-title ">Book Table</h4>
                             <p class="card-category"> Here is a added Book</p>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-bordered table-hover dataTable">
                                     <thead class=" text-primary">
                                     <th class="text-primary">
                                         Name
@@ -33,7 +34,7 @@
                                                 {{$value['name']}}
                                             </td>
                                             <td class="text-primary">
-                                                <a href="{{route('admin.book.edit',['id'=>$value['id']])}}">Edit</a>
+                                                <a href="{{route('admin.book.edit',['id'=>$value['id']])}}">Edits</a>
                                             </td>
                                             <td class="text-primary">
                                                 <a href="{{route('admin.book.delete',['id'=>$value['id']])}}">Delete</a>
@@ -43,6 +44,7 @@
                                     </tbody>
                                     {{$data->links()}}
                                 </table>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
@@ -50,4 +52,17 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        var url = "{{route('admin.book.create')}}";
+        var addBook = document.getElementById('addBook');
+        addBook.addEventListener('click', routing);
+
+        function routing() {
+            location.href = url;
+        }
+
+    </script>
+
 @endsection

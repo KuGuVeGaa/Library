@@ -12,39 +12,39 @@ Tip 2: you can also add an image using data-image tag
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item active ">
-                <a class="nav-link" href="../examples/dashboard.html">
+                <a class="nav-link" href="{{route('admin.index')}}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="../examples/user.html">
+                <a class="nav-link" href="{{route('admin.publisher.index')}}">
                     <i class="material-icons">person</i>
-                    <p>User Profile</p>
+                    <p>Publisher House</p>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="../examples/table.html">
+                <a class="nav-link" href="{{route('admin.writer.index')}}">
                     <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
+                    <p>Writers</p>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="../examples/typography.html">
+                <a class="nav-link" href="{{route('admin.category.index')}}">
                     <i class="material-icons">library_books</i>
-                    <p>Typography</p>
+                    <p>Categories</p>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="../examples/icons.html">
+                <a class="nav-link" href="{{route('admin.book.index')}}">
                     <i class="material-icons">bubble_chart</i>
-                    <p>Icons</p>
+                    <p>Books</p>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="../examples/maps.html">
+                <a class="nav-link" href="{{route('admin.slider.index')}}">
                     <i class="material-icons">location_ons</i>
-                    <p>Maps</p>
+                    <p>Slider</p>
                 </a>
             </li>
             <li class="nav-item ">

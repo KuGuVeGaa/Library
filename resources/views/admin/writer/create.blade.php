@@ -14,7 +14,7 @@
                         </div>
                         <div class="card-body">
                             <form enctype="multipart/form-data" action="{{route('admin.writer.create.post')}}"
-                                  method="post">
+                                  method="post" class="table table-bordered table-hover dataTable">
                                 {{csrf_field()}}
                                 <div class="row">
                                     <div class="col-md-12">
@@ -50,4 +50,6 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
 @endsection
