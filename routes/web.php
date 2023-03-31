@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\admin\indexController;
 use \Illuminate\Support\Facades\Cache;
+use http\Client\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,6 +123,9 @@ Route::get('/download',function (){
 Route::get('/cache',function (){
     Cache::put('site_name','library.local',120);
 });
+Route::get('/imap',[\App\Http\Controllers\IMAPController::class,'ımap']);
+Route::get('/proxy',[\App\Http\Controllers\ProxyController::class,'index']);
+
 
 
 
