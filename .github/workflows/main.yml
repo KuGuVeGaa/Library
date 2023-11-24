@@ -1,0 +1,18 @@
+name: Push to master
+on:
+  pull_request:
+    types:
+      - merged
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Merge pull request
+        run: |
+          git checkout master
+          git merge --ff-only ${{ github.event.pull_request.branch_name }}
+      - name: Push to master
+        run: |
+          git push origin master
