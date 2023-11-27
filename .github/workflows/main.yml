@@ -13,7 +13,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USER}}
           password: ${{secrets.SSH_PASS}}
-          port: ${{secrets.SSH:_PORT}}
+          port: ${{secrets.SSH_PORT}}
           scripts: |
             cd ${{ vars.DIR }}
             git pull
