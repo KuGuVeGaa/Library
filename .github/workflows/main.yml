@@ -1,18 +1,21 @@
-name: Push to master
+name: Pull Request
 on:
   pull_request:
-    types:
-      - merged
+    types: [opened, edited, reopened]
 
 jobs:
-  push:
+  pull-request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Merge pull request
-        run: |
-          git checkout master
-          git merge --ff-only ${{ github.event.pull_request.branch_name }}
-      - name: Push to master
-        run: |
-          git push origin master
+
+      - uses: actions/setup-ssh@v2
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Pull changes from pull request
+        run: git pull origin ${{ github.event.pull_request.head.ref }}
+
+      - name: Add SSH key to remote
+        run: echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_rsa
+        shell: bash
