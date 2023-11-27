@@ -18,4 +18,8 @@ jobs:
             cd ${{ vars.DIR }}
             git pull
             composer install
-          
+      - name: on-failure
+        if: ${{ failure() }}
+        run: |
+            echo "İş akışı başarısız oldu"
+            echo "Sorun: ${{ steps.deploying.outputs.error }}"    
