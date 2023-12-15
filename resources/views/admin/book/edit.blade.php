@@ -13,7 +13,7 @@
                             <p class="card-category">Edit Book</p>
                         </div>
                         <div class="card-body">
-                            <form enctype="multipart/form-data" class="table table-bordered table-hover dataTable"
+                            <form enctype="multipart/form-data" class="table table-bordered table-hover dataTable   "
                                   action="{{route('admin.book.edit.post',['id'=>$data[0]]['id'])}}"
                                   method="post">
                                 {{csrf_field()}}
